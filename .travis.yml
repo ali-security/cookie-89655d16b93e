@@ -6,7 +6,10 @@ node_js:
   - "3.3"
   - "4.4"
   - "5.11"
-  - "6.2"
+  # Bare "6" resolves to 6.17.1, the final 6.x and the one this image ships;
+  # fetching the retired 6.2.2 tarball from nodejs.org stalled long enough to
+  # trip Travis's 10 minute no-output timeout and kill the leg.
+  - "6"
 dist: xenial
 sudo: false
 cache:
